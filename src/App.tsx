@@ -51,6 +51,8 @@ function App() {
         if (!jsonErrorMessage) return
         if (jsonErrorMessage?.code === Errors.InvalidCounterValue) {
           setSessionCounter(jsonErrorMessage.counter)
+          // retry in 500 ms
+          setTimeout(keyCode.bind(null, code, fromTouch), 500)
         }
       })
   }
