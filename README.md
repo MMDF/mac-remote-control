@@ -20,7 +20,7 @@ This project is just a hobby project with potential bugs and security flaws. Do 
 
 The server assumes that the communication is over HTTP and is insecure, thus it uses JWT HS256-signed tokens to communicate and a session counter so that a request can't be copied by an attacker.
 
-There is a built-in session counter that provides basic security. The session counter has a session limit of 10 and blocks new sessions after 10 sessions but you can increase this limit in the code. This is to protect against memory attacks.
+There is a built-in session counter that provides basic security. The session counter has a session limit of 20 and blocks new sessions after 10 sessions but you can increase this limit in the code. This is to protect against memory attacks.
 
 The counter is incremented with each request and the counter value is included in the JWT which makes request forging impossible without the secret.
 
