@@ -15,6 +15,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use((req, res, next) => {
   if (req.body && req.body.sessionId) {
+    if (req.body.sessionId.length > 300)
+      return res.status(403).send({
+        message: "SessionId length is too long",
+        code: Errors.SessionIdTooLong,
+      })
     if (req.body.sessionId in sessionCounter) next()
     else {
       if (Object.keys(sessionCounter).length > 20)

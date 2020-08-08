@@ -4,4 +4,5 @@ export enum Errors {
   InvalidCounterValue,
   FailedTokenVerify,
   MissingRequestToken,
+  SessionIdTooLong,
 }
