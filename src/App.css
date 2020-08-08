@@ -2,9 +2,46 @@
   text-align: center;
 }
 
+button {
+  position: relative;
+  display: flex;
+  background: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: none;
+  border-radius: 10%;
+  border: 10px solid rgba(0, 0, 0, 0);
+}
+button::before {
+  content: "";
+  border-radius: 3rem;
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .App-logo {
   height: 40vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-content: stretch;
   pointer-events: none;
+}
+.secret {
+  display: flex;
+  flex: 1;
+}
+.control {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  flex: 3;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -18,8 +55,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: stretch;
+  align-content: stretch;
   font-size: calc(10px + 2vmin);
   color: white;
 }
